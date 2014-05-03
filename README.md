@@ -21,3 +21,30 @@ or add
 ~~~
 
 to the require section of your ```composer.json``` file and run ```php composer.phar update```.
+
+### Usage
+
+Add this in your view (If you like it global use "views/layouts/main.php"):
+
+```php
+use cakebake\bootstrap\select\BootstrapSelectAsset;
+BootstrapSelectAsset::register($this);
+```
+
+Create your `<select>` with the `.selectpicker` class.
+
+    <select class="selectpicker">
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Barbecue</option>
+    </select>
+    
+Enable Bootstrap-Select via JavaScript:
+
+    $('.selectpicker').selectpicker();
+
+Or just
+
+    $('select').selectpicker();
+
+Checkout the [documentation](http://silviomoreto.github.io/bootstrap-select/3/) for further information.
