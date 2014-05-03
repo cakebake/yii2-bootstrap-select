@@ -3,7 +3,7 @@
 	"description": " A yii2 wrapper package for the custom select for @twitter bootstrap using button dropdown http://silviomoreto.github.io/bootstrap-select/",
 	"keywords": ["yii", "yii2", "bootstrap", "select", "button"],
 	"type": "yii2-extension",
-	"license": "BSD-3-Clause",
+	"license": "LGPL-v3",
 	"support": {
 		"issues": "https://github.com/cakebake/yii2-bootstrap-select/issues",
 		"source": "https://github.com/cakebake/yii2-bootstrap-select"
