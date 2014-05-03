@@ -1,0 +1,23 @@
+{
+	"name": "cakebake/yii2-bootstrap-select",
+	"description": " A yii2 wrapper package for the custom select for @twitter bootstrap using button dropdown http://silviomoreto.github.io/bootstrap-select/",
+	"keywords": ["yii", "yii2", "bootstrap", "select", "button"],
+	"type": "yii2-extension",
+	"license": "BSD-3-Clause",
+	"support": {
+		"issues": "https://github.com/cakebake/yii2-bootstrap-select/issues",
+		"source": "https://github.com/cakebake/yii2-bootstrap-select"
+	},
+	"authors": [
+		{
+			"name": "cakebake (Jens A.)",
+			"email": "cakebake.dev@gmail.com"
+		}
+	],
+	"require": {
+		"yiisoft/yii2-bootstrap": "*"
+	},
+	"autoload": {
+		"psr-4": { "cakebake\\bootstrap\\select\\": "" }
+	}
+}
