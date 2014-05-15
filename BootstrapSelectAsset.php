@@ -10,9 +10,10 @@ class BootstrapSelectAsset extends AssetBundle
         'bootstrap-select.min.css',
     ];
 	public $js = [
-		'bootstrap-select.min.js',
+		'bootstrap-select.js',
 	];
     public $depends = [
+        'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
 }
