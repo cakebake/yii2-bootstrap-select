@@ -1,7 +1,7 @@
 yii2-bootstrap-select
 =====================
 
-  A yii2 wrapper package for the custom select for @twitter bootstrap using button dropdown  http://silviomoreto.github.io/bootstrap-select/
+A yii2 wrapper package for the custom select for @twitter bootstrap using button dropdown  http://silviomoreto.github.io/bootstrap-select/
 
 ### Install via Composer
 
@@ -10,15 +10,11 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
 You can then install the package using the following command:
 
-~~~
-php composer.phar require --prefer-dist cakebake/yii2-bootstrap-select "dev-master"
-~~~
+    php composer.phar require --prefer-dist cakebake/yii2-bootstrap-select "*"
 
 or add
 
-~~~
-"cakebake/yii2-bootstrap-select": "dev-master"
-~~~
+    "cakebake/yii2-bootstrap-select": "*"
 
 to the require section of your ```composer.json``` file and run ```php composer.phar update```.
 
@@ -26,10 +22,8 @@ to the require section of your ```composer.json``` file and run ```php composer.
 
 Add this in your view (If you like it global use "views/layouts/main.php"):
 
-```php
-use cakebake\bootstrap\select\BootstrapSelectAsset;
-BootstrapSelectAsset::register($this);
-```
+    use cakebake\bootstrap\select\BootstrapSelectAsset;
+    BootstrapSelectAsset::register($this);
 
 Create your `<select>` with the `.selectpicker` class.
 
@@ -38,7 +32,7 @@ Create your `<select>` with the `.selectpicker` class.
       <option>Ketchup</option>
       <option>Barbecue</option>
     </select>
-    
+
 Enable Bootstrap-Select via JavaScript:
 
     $('.selectpicker').selectpicker();
