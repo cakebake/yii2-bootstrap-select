@@ -2,6 +2,7 @@
 namespace cakebake\bootstrap\select;
 
 use yii\web\AssetBundle;
+use yii\helpers\ArrayHelper;
 
 class BootstrapSelectAsset extends AssetBundle
 {
@@ -16,4 +17,37 @@ class BootstrapSelectAsset extends AssetBundle
         'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
+
+    /**
+     * @param View $view
+     * @param array $options
+     * @return static the registered asset bundle instance
+     * @see http://silviomoreto.github.io/bootstrap-select/3/#options
+     */
+    public static function register($view, $options = [])
+    {
+        $o = ArrayHelper::merge([
+            'selector' => 'select',
+            'menuArrow' => true,
+            'tickIcon' => true,
+            'selectpickerOptions' => [
+                'style' => 'btn-default form-control',
+            ],
+        ], $options);
+
+        if (!is_string($o['selector']) || empty($o['selector']))
+            return false;
+
+        $js = '';
+        if ($o['menuArrow']) {
+            $js .= '$("' . $o['selector'] . '").addClass("show-menu-arrow");' . PHP_EOL;
+        }
+        if ($o['tickIcon']) {
+            $js .= '$("' . $o['selector'] . '").addClass("show-tick");' . PHP_EOL;
+        }
+        $js .= '$("' . $o['selector'] . '").selectpicker(' . json_encode($o['selectpickerOptions']) . ');' . PHP_EOL;
+
+        parent::register($view);
+        $view->registerJs($js);
+    }
 }

@@ -20,25 +20,22 @@ to the require section of your ```composer.json``` file and run ```php composer.
 
 ### Usage
 
-Add this in your view (If you like it global use "views/layouts/main.php"):
+Add this in your view (If you want it globally, you can take the file "views/layouts/main.php"):
 
-    use cakebake\bootstrap\select\BootstrapSelectAsset;
-    BootstrapSelectAsset::register($this);
+    cakebake\bootstrap\select\BootstrapSelectAsset::register($this);
 
-Create your `<select>` with the `.selectpicker` class.
+This automatically integrates the files and converts all select fields automatically.
 
-    <select class="selectpicker">
-      <option>Mustard</option>
-      <option>Ketchup</option>
-      <option>Barbecue</option>
-    </select>
+If you want more control, you can use the available options.
 
-Enable Bootstrap-Select via JavaScript:
-
-    $('.selectpicker').selectpicker();
-
-Or just
-
-    $('select').selectpicker();
+    cakebake\bootstrap\select\BootstrapSelectAsset::register($this, [
+        'selector' => '.selectpicker', //The jQuery selector (all select forms by default)
+        'menuArrow' => true, //You can also show the tick icon on single select
+        'tickIcon' => false, //The bootstrap menu arrow can be added
+        'selectpickerOptions' => [ //available bootstrap-select data options @see http://silviomoreto.github.io/bootstrap-select/3/#options
+            'size' => 3, //example option @see http://silviomoreto.github.io/bootstrap-select/3/#options
+            'width' => '50%', //example option @see http://silviomoreto.github.io/bootstrap-select/3/#options
+        ],
+    ]);
 
 Checkout the [documentation](http://silviomoreto.github.io/bootstrap-select/3/) for further information.
