@@ -39,13 +39,23 @@ class BootstrapSelectAsset extends AssetBundle
             return false;
 
         $js = '';
+
         if ($o['menuArrow']) {
             $js .= '$("' . $o['selector'] . '").addClass("show-menu-arrow");' . PHP_EOL;
         }
+
         if ($o['tickIcon']) {
             $js .= '$("' . $o['selector'] . '").addClass("show-tick");' . PHP_EOL;
         }
+
+        //Enable Bootstrap-Select for $o['selector']
         $js .= '$("' . $o['selector'] . '").selectpicker(' . json_encode($o['selectpickerOptions']) . ');' . PHP_EOL;
+
+        //Update Bootstrap-Select by :reset click
+        $js .= '$(":reset").click(function(){
+            $(this).closest("form").trigger("reset");
+            $("' . $o['selector'] . '").selectpicker("refresh");
+        });';
 
         parent::register($view);
         $view->registerJs($js);
