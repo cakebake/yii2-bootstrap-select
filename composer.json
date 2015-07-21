@@ -16,7 +16,7 @@
 	],
 	"require": {
 		"yiisoft/yii2-bootstrap": "*",
-		"bootstrap-select/bootstrap-select": "*"
+		"silviomoreto/bootstrap-select": "*"
 	},
 	"autoload": {
 		"psr-4": { "cakebake\\bootstrap\\select\\": "" }
