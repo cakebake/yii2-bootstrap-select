@@ -3,6 +3,7 @@ namespace cakebake\bootstrap\select;
 
 use yii\web\AssetBundle;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Json;
 
 class BootstrapSelectAsset extends AssetBundle
 {
@@ -49,7 +50,7 @@ class BootstrapSelectAsset extends AssetBundle
         }
 
         //Enable Bootstrap-Select for $o['selector']
-        $js .= '$("' . $o['selector'] . '").selectpicker(' . json_encode($o['selectpickerOptions']) . ');' . PHP_EOL;
+        $js .= '$("' . $o['selector'] . '").selectpicker(' . Json::htmlEncode($o['selectpickerOptions']) . ');' . PHP_EOL;
 
         //Update Bootstrap-Select by :reset click
         $js .= '$(":reset").click(function(){
