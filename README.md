@@ -10,11 +10,11 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
 You can then install the package using the following command:
 
-    php composer.phar require --prefer-dist cakebake/yii2-bootstrap-select "*"
+    php composer.phar require --prefer-dist den007/yii2-bootstrap-select "*"
 
 or add
 
-    "cakebake/yii2-bootstrap-select": "*"
+    "den007/yii2-bootstrap-select": "*"
 
 to the require section of your ```composer.json``` file and run ```php composer.phar update```.
 
