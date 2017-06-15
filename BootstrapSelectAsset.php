@@ -1,6 +1,7 @@
 <?php
 namespace cakebake\bootstrap\select;
 
+use Yii;
 use yii\web\AssetBundle;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
@@ -19,6 +20,17 @@ class BootstrapSelectAsset extends AssetBundle
         'yii\bootstrap\BootstrapAsset',
     ];
 
+    /**
+     * Connect a language file
+     */
+    public function init()
+    {
+        parent::init();
+
+        $language = str_replace('-', '_', Yii::$app->language);
+        $this->js[] = 'js/i18n/defaults-' . $language . '.js';
+    }
+    
     /**
      * @param View $view
      * @param array $options
